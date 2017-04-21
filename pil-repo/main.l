@@ -106,7 +106,7 @@
             (_extract *Tgz "git-repo/")
             (_get_version "git-repo/")
             (git_commit)
-      #     (git_push)
+            (git_push)
          )
          (t (_alert "git failed")) )
       # Mercurial
@@ -115,7 +115,7 @@
             (hg_clean_repo)
             (_extract *Tgz "hg-repo/")
             (hg_commit)
-      #     (hg_push)
+            (hg_push)
          )
          (t (_alert "hg failed")) ) ) )
 
