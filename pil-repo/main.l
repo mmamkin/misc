@@ -92,6 +92,9 @@
       (git "push")
       (nil (logerr "git push failed")) ) )
 
+(de add_misc_files ()
+   (call "cp" "-a" "add_files/.github" "git-repo/") )
+
 (de updaterepo ()
    (and
       (_backup_tgz *Tgz)
@@ -105,6 +108,7 @@
             (git "checkout" "dev" "-q")
             (_extract *Tgz "git-repo/")
             (_get_version "git-repo/")
+            (add_misc_files)
             (git_commit)
             (git_push)
          )
